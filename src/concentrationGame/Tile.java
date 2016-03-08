@@ -14,7 +14,7 @@ public class Tile {
 		this.number = number;
 	}
 
-	public boolean isMatched() {
+	public boolean getMatched() {
 		return matched;
 	}
 
@@ -40,6 +40,21 @@ public class Tile {
 	@Override
 	public String toString() {
 		return "Tile [number=" + number + ", matched=" + matched + ", nbClick=" + nbClick + "]";
+	}
+	
+	public boolean compareTo(Tile t) {
+		boolean result = false;
+		if(this.number == t.number)
+		{
+			result = true;
+			this.matched = true;
+			t.matched = true;
+		}
+		return result;
+	}
+	
+	public void click() {
+		nbClick++;
 	}
 	
 
