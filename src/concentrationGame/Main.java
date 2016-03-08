@@ -16,7 +16,7 @@ public class Main {
 		//b.compareTiles(0, 1);
 		//b.compareTiles(0, 5);
 
-		System.out.println("TEST");
+		System.out.println("TEST2");
 		
 		//Verify that the nbClick increased
 		//System.out.println(b.toString());
