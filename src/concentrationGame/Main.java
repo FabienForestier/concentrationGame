@@ -9,6 +9,7 @@ public class Main {
 		Board b = new Board(16);
 		Scanner scan = new Scanner (System.in);
 		int num2=0,num1=0;
+		boolean solved =false;
 		//System.out.println(t.toString());
 		//System.out.println(b.toString());
 		b.display();
@@ -18,16 +19,17 @@ public class Main {
 		
 		//Verify that the nbClick increased
 		//System.out.println(b.toString());
-		while(num1!=-1 && num2!=-1)
+		while((num1!=-1 && num2!=-1) && (solved==false))
 		{
 			System.out.println("Enter two numbers between 0 and 15, -1 to exit");
 			
-			num1= scan.nextInt();
-			num2= scan.nextInt();
+			num1 = scan.nextInt();
+			num2 = scan.nextInt();
 			if(num1>=0 && num2>=0)
 			{
-			b.compareTiles(num1, num2);
+			b.guess(num1, num2);
 			b.display();
+			solved=b.boardSolved();
 			}else
 			{
 				if(num1==-1 && num2==-1)
@@ -39,6 +41,9 @@ public class Main {
 				}
 			}
 		}
+		if(solved==true)
+		{
+			System.out.println("You solved the game");
+		}
 	}
-
 }
